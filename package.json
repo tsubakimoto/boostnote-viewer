@@ -6,7 +6,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "cson": "^7.20.0"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",
