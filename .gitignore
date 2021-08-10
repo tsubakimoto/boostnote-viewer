@@ -102,3 +102,29 @@ dist
 
 # TernJS port file
 .tern-port
+
+# TypeScript output
+dist
+out
+
+# Azure Functions artifacts
+bin
+obj
+appsettings.json
+local.settings.json
+
+# VisualStudioCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# VisualStudioCode Patch
+# Ignore all local history of files
+.history
+.ionide
