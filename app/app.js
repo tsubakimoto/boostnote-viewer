@@ -1,5 +1,5 @@
 window.onload = function() {
-    fetch('http://localhost:7071/api/notes')
+    fetch('/api/notes')
         .then(response => response.json())
         .then(data => {
             console.log('data', data);
