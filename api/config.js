@@ -1,11 +1,11 @@
 const config = {
-    endpoint: process.env["Cosmos:Endpoint"],
-    key: process.env["Cosmos:Key"],
-    databaseId: process.env["Cosmos:Database"],
-    containerId: process.env["Cosmos:Container"],
+    endpoint: process.env["COSMOS_ENDPOINT"],
+    key: process.env["COSMOS_KEY"],
+    databaseId: process.env["COSMOS_DATABASE"],
+    containerId: process.env["COSMOS_CONTAINER"],
     partitionKey: {
-        kind: process.env["Cosmos:PartitionKey:Kind"],
-        paths: [process.env["Cosmos:PartitionKey:Paths"]]
+        kind: process.env["COSMOS_PARTITIONKEY_KIND"],
+        paths: [process.env["COSMOS_PARTITIONKEY_PATHS"]]
     }
 };
 
