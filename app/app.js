@@ -30,6 +30,6 @@ function showNote(selectedId) {
         contentElement.innerHTML = '<p class="text-gray-600">Note is not found.</p>';
     } else {
         const content = note.snippets[0].content;
-        contentElement.innerHTML = content.replace(/\n/g, '<br>');
+        contentElement.innerHTML = marked(content, { sanitize: true });
     }
 }
