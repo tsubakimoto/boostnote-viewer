@@ -4,7 +4,7 @@ window.onload = function() {
     fetch('/api/notes')
         .then(response => response.json())
         .then(data => {
-            console.log('data', data);
+            console.debug('data', data);
             notes = data;
 
             let documents = '';
@@ -25,10 +25,14 @@ function showNote(selectedId) {
     const note = notes.find( ({ id }) => id === selectedId);
     console.debug('note', note);
 
+    const titleElement = document.getElementById('title');
     const contentElement = document.getElementById('content');
     if (note === undefined || note === null) {
+        titleElement.innerHTML = '';
         contentElement.innerHTML = '<p class="text-gray-600">Note is not found.</p>';
     } else {
+        titleElement.innerHTML = note.title;
+
         const content = note.snippets[0].content;
         contentElement.innerHTML = marked(content, { sanitize: true });
     }
