@@ -58,6 +58,6 @@ function showNote(selectedId) {
         titleElement.innerHTML = note.title;
 
         const content = note.snippets[0].content;
-        contentElement.innerHTML = marked(content, { sanitize: true });
+        contentElement.innerHTML = marked.parse(content);
     }
 }
