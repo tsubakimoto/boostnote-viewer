@@ -1,6 +1,8 @@
+const selectedFolderBackgroundColorClass = 'bg-blue-100';
 const selectedNoteBackgroundColorClass = 'bg-green-100';
 
 let notes;
+let selectedFolderId;
 let selectedNoteId;
 
 window.onload = function () {
@@ -25,23 +27,23 @@ window.onload = function () {
 };
 
 function selectNote(selectedId) {
-  clearSelection(selectedNoteId);
-  setSelection(selectedId);
+  clearSelection(selectedNoteId, selectedNoteBackgroundColorClass);
+  setSelection(selectedId, selectedNoteBackgroundColorClass);
   showNote(selectedId);
   selectedNoteId = selectedId;
 }
 
-function clearSelection(id) {
+function clearSelection(id, color) {
   const el = document.getElementById(id);
   if (el) {
-    el.classList.remove(selectedNoteBackgroundColorClass);
+    el.classList.remove(color);
   }
 }
 
-function setSelection(id) {
+function setSelection(id, color) {
   const el = document.getElementById(id);
   if (el) {
-    el.classList.add(selectedNoteBackgroundColorClass);
+    el.classList.add(color);
   }
 }
 
@@ -60,4 +62,11 @@ function showNote(selectedId) {
     const content = note.snippets[0].content;
     contentElement.innerHTML = marked.parse(content);
   }
+}
+
+function showDocuments(folderId) {
+  console.log('folder id', folderId);
+  clearSelection(selectedFolderId, selectedFolderBackgroundColorClass);
+  setSelection(folderId, selectedFolderBackgroundColorClass);
+  selectedFolderId = folderId;
 }
