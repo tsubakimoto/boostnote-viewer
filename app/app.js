@@ -11,17 +11,6 @@ window.onload = function () {
     .then(data => {
       console.debug('data', data);
       notes = data;
-
-      let documents = '';
-      data.forEach(item => {
-        const title = `<h5 class="font-semibold text-gray-900">${item.title}</h5>`;
-        const tags = item.tags.join(', ');
-        const content = `<p>Tags: ${tags}</p>`;
-        documents += `<div id="${item.id}" class="note mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="selectNote('${item.id}')">${title}${content}</div>`;
-      });
-
-      const docs = document.getElementById('docs');
-      docs.innerHTML = documents;
     })
     .catch(error => console.log('error', error));
 };
@@ -64,9 +53,32 @@ function showNote(selectedId) {
   }
 }
 
+function clearNote() {
+  const titleElement = document.getElementById('title');
+  const contentElement = document.getElementById('content');
+  titleElement.innerHTML = '';
+  contentElement.innerHTML = '';
+}
+
 function showDocuments(folderId) {
   console.log('folder id', folderId);
+  clearNote();
   clearSelection(selectedFolderId, selectedFolderBackgroundColorClass);
   setSelection(folderId, selectedFolderBackgroundColorClass);
   selectedFolderId = folderId;
+
+  let documents = '';
+  notes.forEach(item => {
+    if (item.folder !== folderId) {
+      return;
+    }
+
+    const title = `<h5 class="font-semibold text-gray-900">${item.title}</h5>`;
+    const tags = item.tags.join(', ');
+    const content = `<p>Tags: ${tags}</p>`;
+    documents += `<div id="${item.id}" class="note mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="selectNote('${item.id}')">${title}${content}</div>`;
+  });
+
+  const docs = document.getElementById('docs');
+  docs.innerHTML = documents;
 }
