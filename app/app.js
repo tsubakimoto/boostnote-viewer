@@ -15,7 +15,7 @@ window.onload = function () {
         const title = `<h5 class="font-semibold text-gray-900">${item.title}</h5>`;
         const tags = item.tags.join(', ');
         const content = `<p>Tags: ${tags}</p>`;
-        documents += `<div id="${item.id}" class="note mt-3 mb-3 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="selectNote('${item.id}')">${title}${content}</div>`;
+        documents += `<div id="${item.id}" class="note mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="selectNote('${item.id}')">${title}${content}</div>`;
       });
 
       const docs = document.getElementById('docs');
