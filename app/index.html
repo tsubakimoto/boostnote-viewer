@@ -2,81 +2,89 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css">
-    <title>Boostnote Viewer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css">
+  <title>Boostnote Viewer</title>
 </head>
 
 <body>
-    <header>
-        <!-- Section 1 -->
-        <section class="w-full px-8 text-gray-700 bg-white">
-            <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
-                <div class="relative flex flex-col md:flex-row">
-                    <a href="#_" class="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
-                        <span class="mx-auto text-xl font-black leading-none text-gray-900 select-none">Boostnote Viewer</span>
-                    </a>
-                    <!-- <nav
-                        class="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200">
-                        <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Home</a>
-                        <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Features</a>
-                        <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
-                        <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-                    </nav> -->
+  <header>
+    <!-- Section 1 -->
+    <section class="w-full px-8 bg-gray-600">
+      <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
+        <div class="relative flex flex-col md:flex-row">
+          <a href="/"
+            class="flex items-center mb-5 font-medium lg:w-auto lg:items-center lg:justify-center md:mb-0">
+            <span class="mx-auto text-xl font-black leading-none text-white select-none">Boostnote Viewer</span>
+          </a>
+          <!-- <nav
+              class="flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200">
+              <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Home</a>
+              <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Features</a>
+              <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
+              <a href="#_" class="mr-5 font-medium leading-6 text-gray-600 hover:text-gray-900">Blog</a>
+          </nav> -->
+        </div>
+
+        <!-- <div class="inline-flex items-center ml-5 space-x-6 lg:justify-end">
+            <a href="#"
+                class="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
+                Sign in
+            </a>
+            <a href="#"
+                class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+                Sign up
+            </a>
+        </div> -->
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <!-- Section 2 -->
+    <section class="py-6 bg-white">
+      <div class="px-8 mx-auto max-w-7xl lg:px-16">
+        <div class="grid grid-cols-6 gap-8 text-gray-600">
+          <section id="folders">
+            <div id="0c390cc7979007a7c0ab" class="folder mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="showDocuments('0c390cc7979007a7c0ab')">azure</div>
+            <div id="900bc02517408a1b4b92" class="folder mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="showDocuments('900bc02517408a1b4b92')">dotnet</div>
+            <div id="1581dd3b9e09ea92aad6" class="folder mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="showDocuments('1581dd3b9e09ea92aad6')">aadojo</div>
+            <div id="65140060d067551b1923" class="folder mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="showDocuments('65140060d067551b1923')">blog</div>
+            <div id="8951efe717322b263fd4" class="folder mb-2 p-2 rounded-lg hover:bg-blue-50 cursor-pointer" onclick="showDocuments('8951efe717322b263fd4')">memo</div>
+          </section>
+          <section id="docs" class="col-span-2">
+            <!-- https://tailwindcss.com/docs/animation#pulse -->
+            <!-- <div class="animate-pulse flex space-x-4">
+              <div class="flex-1 space-y-4 py-1">
+                <div class="h-4 bg-gray-400 rounded w-3/4"></div>
+                <div class="space-y-2">
+                  <div class="h-4 bg-gray-400 rounded"></div>
+                  <div class="h-4 bg-gray-400 rounded w-5/6"></div>
                 </div>
-    
-                <!-- <div class="inline-flex items-center ml-5 space-x-6 lg:justify-end">
-                    <a href="#"
-                        class="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
-                        Sign in
-                    </a>
-                    <a href="#"
-                        class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
-                        Sign up
-                    </a>
-                </div> -->
-            </div>
-        </section>
-    </header>
+              </div>
+            </div> -->
+          </section>
+          <section id="contents" class="col-span-3">
+            <h2 id="title" class="mb-4 font-bold text-3xl"></h2>
+            <article id="content" class="markdown-body"></article>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <main>
-        <!-- Section 2 -->
-        <section class="py-6 bg-white">
-            <div class="px-8 mx-auto max-w-7xl lg:px-16">
-                <div class="grid grid-cols-1 gap-0 text-gray-600 md:grid-cols-2 md:gap-16">
-                    <section id="docs">
-                        <!-- https://tailwindcss.com/docs/animation#pulse -->
-                        <div class="animate-pulse flex space-x-4">
-                            <div class="flex-1 space-y-4 py-1">
-                                <div class="h-4 bg-gray-400 rounded w-3/4"></div>
-                                <div class="space-y-2">
-                                    <div class="h-4 bg-gray-400 rounded"></div>
-                                    <div class="h-4 bg-gray-400 rounded w-5/6"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h2 id="title" class="mb-4 text-xl font-bold md:text-3xl"></h2>
-                        <article id="content" class="markdown-body"></article>
-                    </section>
-                </div>
-            </div>
-        </section>
-    </main>
+  <footer class="w-full px-8 text-gray-700 bg-white border-t-2">
+    <section class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
+      <p class="text-center md:text-center">© 2021 Yuta Matsumura All Rights Reserved</p>
+    </section>
+  </footer>
 
-    <footer class="w-full px-8 text-gray-700 bg-white border-t-2">
-        <section class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
-            <p class="text-center md:text-center">© 2021 Yuta Matsumura All Rights Reserved</p>
-        </section>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
