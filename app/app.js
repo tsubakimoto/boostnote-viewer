@@ -5,6 +5,16 @@ let notes;
 let selectedFolderId;
 let selectedNoteId;
 
+marked.use({
+  pedantic: false,
+  gfm: true,
+  breaks: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+});
+
 window.onload = function () {
   fetch('/api/notes')
     .then(response => response.json())
