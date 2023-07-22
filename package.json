@@ -1,0 +1,19 @@
+{
+  "name": "boostnote-viewer",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "swa start ./app --api-location ./api",
+    "test": "echo \"No tests yet...\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsubakimoto/boostnote-viewer.git"
+  },
+  "author": "Yuta Matsumura",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/tsubakimoto/boostnote-viewer/issues"
+  },
+  "homepage": "https://github.com/tsubakimoto/boostnote-viewer#readme"
+}
