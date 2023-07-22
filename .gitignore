@@ -128,3 +128,6 @@ local.settings.json
 # Ignore all local history of files
 .history
 .ionide
+
+# Azurite files
+__azurite_db_*
